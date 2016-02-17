@@ -87,7 +87,20 @@
           <div class="row text-center m-t-25">
             <div class="col-lg-10 col-lg-offset-1">
               <div class="row m-b-25 m-t-25">
-                <div class="col-md-3 col-sm-6">
+                @forelse ($modules as $module)
+                  <div class="col-md-3 col-sm-6">
+                    <div class="service-item">
+                      <button data-toggle="modal" href="#{{ $module->name }}" class="btn btn-primary btn-simforta-icon waves-circle {{ $module->color }}"><i class="simforta-lg {{ $module->icon }}"></i></button>
+                      <h4> <strong>{{ $module->title }}</strong> </h4>
+                      <p>&nbsp;</p>
+                    </div>
+                  </div>
+                @empty
+                  DATA TIDAK DITEMUKAN
+                @endforelse
+                
+
+                <!--<div class="col-md-3 col-sm-6">
                   <div class="service-item">
                     <button data-toggle="modal" href="#lahan" class="btn btn-primary btn-simforta-icon waves-circle bgm-lime"><i class="simforta-lg md-filter-hdr"></i></button>
                     <h4> <strong>LAHAN &amp; MUSIM TANAM</strong> </h4>
@@ -114,18 +127,18 @@
                     <h4> <strong>HARGA PASAR</strong> </h4>
                     <p>&nbsp;</p>
                   </div>
-                </div>
+                </div>-->
               </div>
               <!-- /.row (nested) -->
               
               <div class="row">
-                <div class="col-md-12">
+                <!--<div class="col-md-12">
                   <div class="service-item">
                     <button data-toggle="modal" href="#pembiayaan" class="btn btn-simforta-icon waves-circle bgm-purple"><i class="simforta-lg md-account-balance"></i></button>
                     <h4> <strong>PEMBIAYAAN</strong> </h4>
                     <p>&nbsp;</p>
                   </div>
-                </div>
+                </div>-->
               </div>
             </div>
             <!-- /.col-lg-10 --> 
@@ -228,7 +241,42 @@
 {!! Html::script('simforta/js/functions.js') !!}
 
 <!-- Modal -->
-<div class="modal fade" id="lahan" tabindex="-1" role="dialog" aria-hidden="true">
+@forelse ($modules as $module)
+  <div class="modal fade" id="{{ $module->name }}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ $module->title }}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="list-group"> 
+          @forelse ($modules_content as $module_content)
+          <?php
+          $module_uuid = $module->uuid;
+          $module_content_uuid = $module_content->modules_uuid;
+          if($module_uuid == $module_content_uuid) {
+          ?>
+            <a href="{{$module_content->address}}" class="list-group-item">
+              {{$module_content->title}}
+            </a>
+          <?php
+          }
+          ?> 
+          @empty
+            DATA TIDAK DITEMUKAN
+          @endforelse
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+@empty
+  DATA TIDAK DITEMUKAN
+@endforelse
+<!--<div class="modal fade" id="lahan" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -251,7 +299,10 @@
         <h4 class="modal-title">Benih &amp; Pupuk</h4>
       </div>
       <div class="modal-body">
-        <div class="list-group"> <a href="http://bibit.ditjennak.pertanian.go.id" class="list-group-item">Direktorat Pembibitan Ternak</a> </div>
+        <div class="list-group"> 
+          <a href="http://bibit.ditjennak.pertanian.go.id" class="list-group-item">Direktorat Pembibitan Ternak</a> 
+          <a href="http://betcipelang.info" class="list-group-item">Balai Embrio Ternak Cipelang</a> 
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-link" data-dismiss="modal">Tutup</button>
@@ -306,7 +357,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 </Body>
 </html>

@@ -70,7 +70,7 @@
           </center>
         </div>
         <div class="card-body card-padding">
-          <form action="http://simapta.pertanian.go.id/api/search/result" method="post">
+          <form action="/result" method="post">
             <div class="row text-center m-25">
               <div class="col-lg-4 col-md-6 col-xs-12 col-md-offset-3 col-lg-offset-4">
                 <div class="input-group"> <span class="input-group-addon"><i class="md md-search"></i></span>

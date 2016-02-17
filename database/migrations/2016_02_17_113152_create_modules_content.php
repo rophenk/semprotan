@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModulesTable extends Migration
+class CreateModulesContent extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CreateModulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('modules', function(Blueprint $table){
+        Schema::create('modules_content', function(Blueprint $table){
             $table->increments('id');
-            $table->string('uuid', 36);
-            $table->string('name');
+            $table->integer('modules_id');
+            $table->string('modules_uuid', 36);
+            $table->text('address')->nullable();
             $table->string('title');
-            $table->string('icon');
-            $table->string('color');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

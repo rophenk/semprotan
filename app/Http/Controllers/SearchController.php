@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Modules;
+use App\ModulesContent;
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 
 class SearchController extends Controller
 {
@@ -16,7 +19,11 @@ class SearchController extends Controller
      */
     public function index()
     {
-        //
+        
+        $modules = Modules::all();
+        $modules_content = ModulesContent::all();
+
+        return view('index', ['modules' => $modules, 'modules_content' => $modules_content]);
     }
 
     public function result(Request $request)

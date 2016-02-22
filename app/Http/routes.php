@@ -16,6 +16,11 @@
 });*/
 Route::resource('/', 'SearchController@index');
 
+Route::controllers([
+    'auth'  => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+  ]);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -34,3 +39,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::post('result', 'SearchController@result');
 Route::get('detail/{uuid?}', 'SearchController@show');
+
+Route::get('admin/home', 'AdminController@index');
+Route::resource('admin/category', 'ModulesController');
+Route::resource('admin/category.links', 'LinksController');

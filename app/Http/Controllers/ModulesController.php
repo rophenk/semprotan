@@ -9,6 +9,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Input;
 use Redirect;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 class ModulesController extends Controller
 {
@@ -43,7 +45,7 @@ class ModulesController extends Controller
     public function store(Request $request)
     {
         $module = new Modules;
-        $module->uuid   = 'bb8ab1ad-cd83-44e3-86d0-2a2b201c3d99';
+        $module->uuid   = Uuid::uuid4();;
         $module->name   = $request->name;
         $module->title  = $request->title;
         $module->icon   = $request->icon;

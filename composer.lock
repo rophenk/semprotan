@@ -4,9 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8ac8a5f18e274e55b89e4aff4cf1889f",
-    "content-hash": "843eb04f2a6b8c46d9aaccd6a44030e9",
+    "hash": "38f489a249cacd134010d16b7c8ad286",
+    "content-hash": "8a1fecef0f3f4f8cb03aa39cf75f5c6b",
     "packages": [
+        {
+            "name": "amostajo/laravel-image-handler",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amostajo/laravel-image-handler.git",
+                "reference": "9fddeb137f3440e9695ebbfac1ba0899076fa2c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amostajo/laravel-image-handler/zipball/9fddeb137f3440e9695ebbfac1ba0899076fa2c4",
+                "reference": "9fddeb137f3440e9695ebbfac1ba0899076fa2c4",
+                "shasum": ""
+            },
+            "require": {
+                "eventviva/php-image-resize": "1.5.*",
+                "illuminate/console": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "illuminate/database": "~5.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4.1",
+                "sami/sami": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Amostajo\\LaravelImageHandler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alejandro Mostajo",
+                    "email": "amostajo@gmail.com"
+                }
+            ],
+            "description": "Package provides laravel with Image Handler class, perfect to create thumbs, resize or crop images.",
+            "keywords": [
+                "crop",
+                "handler",
+                "handling",
+                "image",
+                "images",
+                "laravel",
+                "resize",
+                "thumb",
+                "thumbs"
+            ],
+            "time": "2015-07-02 18:14:20"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -160,6 +216,50 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "eventviva/php-image-resize",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eventviva/php-image-resize.git",
+                "reference": "683a80e76908fd1c53cd2fd7f638df39d6ebfcb5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eventviva/php-image-resize/zipball/683a80e76908fd1c53cd2fd7f638df39d6ebfcb5",
+                "reference": "683a80e76908fd1c53cd2fd7f638df39d6ebfcb5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aditya Patadia",
+                    "homepage": "http://aditya.patadia.org/"
+                }
+            ],
+            "description": "PHP class to re-size and scale images",
+            "homepage": "https://github.com/eventviva/php-image-resize",
+            "keywords": [
+                "image",
+                "php",
+                "resize",
+                "scale"
+            ],
+            "time": "2016-01-06 18:04:49"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -412,16 +512,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.16",
+            "version": "v5.2.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "39e89553c124dce266da03ee3c0260bdd62f1848"
+                "reference": "d4ff9a1e3e9b2f99f8f3e957876e343d804d944f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/39e89553c124dce266da03ee3c0260bdd62f1848",
-                "reference": "39e89553c124dce266da03ee3c0260bdd62f1848",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d4ff9a1e3e9b2f99f8f3e957876e343d804d944f",
+                "reference": "d4ff9a1e3e9b2f99f8f3e957876e343d804d944f",
                 "shasum": ""
             },
             "require": {
@@ -536,7 +636,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-02-15 17:46:58"
+            "time": "2016-02-19 17:58:28"
         },
         {
             "name": "laravelcollective/html",
@@ -594,16 +694,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.16",
+            "version": "1.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031"
+                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/183e1a610664baf6dcd6fceda415baf43cbdc031",
-                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
+                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
                 "shasum": ""
             },
             "require": {
@@ -616,8 +716,7 @@
                 "ext-fileinfo": "*",
                 "mockery/mockery": "~0.9",
                 "phpspec/phpspec": "^2.2",
-                "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.8"
+                "phpunit/phpunit": "~4.8 || ~5.0"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -674,7 +773,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-12-19 20:16:43"
+            "time": "2016-02-19 15:35:38"
         },
         {
             "name": "monolog/monolog",

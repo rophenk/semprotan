@@ -76,7 +76,7 @@
                 <div class="input-group"> <span class="input-group-addon"><i class="md md-search"></i></span>
                   <div class="fg-line">
                     <input id="icon_prefix" type="text" name="keyword" class="form-control" placeholder="Cari">
-					<input type="hidden" name="_token" value="7WM7PPMFYNdB1blbEJVHYyZWGZv4EtaIxA1GNixz">
+					          <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                   
                   </div>
                 </div>

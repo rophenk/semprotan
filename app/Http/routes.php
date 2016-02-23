@@ -32,14 +32,19 @@ Route::controllers([
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+
+
+
+Route::group(['middleware' => 'web'], function () {
+  Route::resource('/', 'SearchController@index');
+  Route::post('result', 'SearchController@result');
+  Route::get('detail/{uuid?}', 'SearchController@show');
+
+  Route::get('admin/home', 'AdminController@index');
+  Route::resource('admin/category', 'ModulesController');
+  Route::resource('admin/category.links', 'LinksController');
+    
+  Route::auth();
+
+  Route::get('/home', 'HomeController@index');
 });
-
-
-Route::post('result', 'SearchController@result');
-Route::get('detail/{uuid?}', 'SearchController@show');
-
-Route::get('admin/home', 'AdminController@index');
-Route::resource('admin/category', 'ModulesController');
-Route::resource('admin/category.links', 'LinksController');

@@ -9,15 +9,26 @@
           <p>
             {!! link_to_route('admin.category.links.create', 'Tambah Data Tautan', NULL, array('class' => 'btn btn-info')) !!}
           </p>
-          <table class="table table-hover table-striped">
-            <tr>
-              <th>Judul</th>
-              <th>Alamat URL</th>
-              <th>Tautan</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-            
+          <table class="table table-hover table-striped display" id="datatable" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th>Judul</th>
+                <th>Alamat URL</th>
+                <th>Tautan</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Judul</th>
+                <th>Alamat URL</th>
+                <th>Tautan</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </tfoot>
+            <tbody>
               @forelse($modules as $module)
               <tr>
                 {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('admin.category.destroy', $module->id))) !!}
@@ -31,6 +42,7 @@
                   DATA TIDAK DITEMUKAN
               </tr>
               @endforelse
+            </tbody>
             
           </table>
 

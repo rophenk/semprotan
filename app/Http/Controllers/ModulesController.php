@@ -15,6 +15,15 @@ use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 class ModulesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -44,6 +53,7 @@ class ModulesController extends Controller
      */
     public function store(Request $request)
     {
+        
         $module = new Modules;
         $module->uuid   = Uuid::uuid4();;
         $module->name   = $request->name;

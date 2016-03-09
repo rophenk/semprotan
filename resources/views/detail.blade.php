@@ -93,8 +93,11 @@
                 @forelse ($data as $data)
                 <h1>{{ $data->document_title }}</h1>
                 <div class="col-md-6 col-sm-6">
-                  <img src="{{ $data->cover_image }}" width="250px"/>
-                  <?php /*$url = ImageHandler::thumb($data->cover_image);*/ ?>
+                  <!--<img src="{{ $data->cover_image }}" width="250px"/>-->
+                  <?php 
+                  /*$url = ImageHandler::thumb($data->cover_image); */
+                  $url = ImageHandler::width($data->cover_image, 250);
+                  echo '<img src="'.$url.'">'; ?>
                   <h3>Oleh {{ $data->writer }}</h3>
                   <p>{{ $data->description }}</p>
                   <p><a href="{{ $data->address }}" target="_blank" class="btn">Unduh / Download File</a></p>

@@ -76,8 +76,8 @@
                 <div class="input-group"> <span class="input-group-addon"><i class="md md-search"></i></span>
                   <div class="fg-line">
                     <input id="icon_prefix" type="text" name="keyword" class="form-control" placeholder="Cari">
-					<input type="hidden" name="_token" value="7WM7PPMFYNdB1blbEJVHYyZWGZv4EtaIxA1GNixz">
-                  
+					           <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                         
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@
           <div class="row text-left m-t-25">
             <div class="col-lg-10 col-lg-offset-1">
               <div class="row m-b-25 m-t-25">
-
+                <?php if(isset($result)) { ?>
                 <!-- Content Here -->
                 @forelse ($result as $result)
                   <h4><a href="/detail/{{ $result->uuid }}">{{ $result->document_title }}</a></h4>
@@ -95,7 +95,13 @@
                 @empty
                   DATA TIDAK DITEMUKAN
                 @endforelse
-                
+                <?php 
+                  } else {
+
+                    echo "Terjadi Kesalahan dalam Pencarian";
+
+                  }
+                ?>
               </div>
             </div>
             <!-- /.col-lg-10 --> 

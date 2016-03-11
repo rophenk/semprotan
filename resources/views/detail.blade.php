@@ -77,7 +77,8 @@
                 <div class="input-group"> <span class="input-group-addon"><i class="md md-search"></i></span>
                   <div class="fg-line">
                     <input id="icon_prefix" type="text" name="keyword" class="form-control" placeholder="Cari">
-					<input type="hidden" name="_token" value="7WM7PPMFYNdB1blbEJVHYyZWGZv4EtaIxA1GNixz">
+                    <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                      
                   
                   </div>
                 </div>
@@ -95,9 +96,15 @@
                 <div class="col-md-6 col-sm-6">
                   <!--<img src="{{ $data->cover_image }}" width="250px"/>-->
                   <?php 
-                  /*$url = ImageHandler::thumb($data->cover_image); */
-                  $url = ImageHandler::width($data->cover_image, 250);
-                  echo '<img src="'.$url.'">'; ?>
+                  if(!empty($data->cover_image)) {
+                    /*$url = ImageHandler::thumb($data->cover_image); */
+                    $url = ImageHandler::width($data->cover_image, 250);
+                    echo '<img src="'.$url.'" width="250px">';
+                  }
+                  if(empty($data->cover_image)) {
+                    echo '<img src="/cover-logo.png">';
+                  }
+                   ?>
                   <h3>Oleh {{ $data->writer }}</h3>
                   <p>{{ $data->description }}</p>
                   <p><a href="{{ $data->address }}" target="_blank" class="btn">Unduh / Download File</a></p>

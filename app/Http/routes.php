@@ -43,6 +43,7 @@ Route::group(['middleware' => 'web'], function () {
   Route::get('admin/home', 'AdminController@index');
   Route::resource('admin/category', 'ModulesController');
   Route::resource('admin/category.links', 'LinksController');
+  Route::get('admin/register', 'AdminController@register');
     
   Route::auth();
 

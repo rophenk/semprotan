@@ -29,6 +29,12 @@ class AdminController extends Controller
         return view('admin.app');
     }
 
+    public function register()
+    {
+        //
+        return view('auth.register');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

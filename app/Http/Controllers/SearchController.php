@@ -28,8 +28,8 @@ class SearchController extends Controller
 
     public function result(Request $request)
     {
-    	$url = 'http://simapta.local/api/v1/search/result';
-    	//$url = 'http://simapta.pertanian.go.id/api/v1/search/result';
+    	//$url = 'http://simapta.local/api/v1/search/result';
+    	$url = 'http://simapta.pertanian.go.id/api/v1/search/result';
     	$postData = 'keyword='.$request->keyword;
 
     	$curl = curl_init();
@@ -89,8 +89,8 @@ class SearchController extends Controller
      */
     public function show($uuid)
     {
-        $url = 'http://simapta.local/api/v1/show/'.$uuid;
-        //$url = 'http://simapta.pertanian.go.id/api/v1/show/'.$uuid;
+        //$url = 'http://simapta.local/api/v1/show/'.$uuid;
+        $url = 'http://simapta.pertanian.go.id/api/v1/show/'.$uuid;
 
          // create curl resource 
         $ch = curl_init(); 

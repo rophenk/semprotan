@@ -44,6 +44,7 @@ Route::group(['middleware' => 'web'], function () {
   Route::resource('admin/category', 'ModulesController');
   Route::resource('admin/category.links', 'LinksController');
   Route::get('admin/register', 'AdminController@register');
+  Route::resource('admin/users', 'UserController');
     
   Route::auth();
 

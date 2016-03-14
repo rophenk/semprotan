@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Modules;
+use App\UserModel;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Input;
 use Redirect;
-use Ramsey\Uuid\Uuid;
-use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
-class ModulesController extends Controller
+class UserController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +20,7 @@ class ModulesController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,9 +28,9 @@ class ModulesController extends Controller
      */
     public function index()
     {
-        $modules = Modules::all();
+        $users = UserModel::all();
 
-        return view('admin.modulesList', ['modules' => $modules]);
+        return view('admin.userList', ['users' => $users]);
     }
 
     /**
@@ -42,7 +40,7 @@ class ModulesController extends Controller
      */
     public function create()
     {
-        return view('admin.modulesCreate');
+        return view('admin.userCreate');
     }
 
     /**
@@ -53,15 +51,12 @@ class ModulesController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $module = new Modules;
-        $module->uuid   = Uuid::uuid4();
-        $module->name   = $request->name;
-        $module->title  = $request->title;
-        $module->icon   = $request->icon;
-        $module->color  = $request->color;
-        $module->save();
-        return Redirect::route('admin.category.index');
+        $user = new UserModel;
+        $user->name   = $request->name;
+        $user->email  = $request->email;
+        $user->password  = bcrypt($request->password);
+        $user->save();
+        return Redirect::route('admin.users.index');
     }
 
     /**
@@ -72,8 +67,7 @@ class ModulesController extends Controller
      */
     public function show($id)
     {
-        $modules = Modules::find($id);
-        return view('admin.modulesShow', ['modules' => $modules]);
+        //
     }
 
     /**
@@ -84,8 +78,8 @@ class ModulesController extends Controller
      */
     public function edit($id)
     {
-        $modules = Modules::find($id);
-        return view('admin.modulesEdit', ['modules' => $modules]);
+        $user = UserModel::find($id);
+        return view('admin.userEdit', ['user' => $user]);
     }
 
     /**
@@ -97,14 +91,12 @@ class ModulesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $module = Modules::find($id);
-        $module->name   = $request->name;
-        $module->title  = $request->title;
-        $module->icon   = $request->icon;
-        $module->color  = $request->color;
-        $module->save();
-        return Redirect::route('admin.category.index');
-
+        $user = UserModel::find($id);
+        $user->name   = $request->name;
+        $user->email  = $request->email;
+        $user->password   = bcrypt($request->password);
+        $user->save();
+        return Redirect::route('admin.users.index');
     }
 
     /**
@@ -115,9 +107,9 @@ class ModulesController extends Controller
      */
     public function destroy($id)
     {
-        $module = Modules::find($id);
-        $module->delete();
+        $user = UserModel::find($id);
+        $user->delete();
 
-        return Redirect::route('admin.category.index');
+        return Redirect::route('admin.users.index');
     }
 }

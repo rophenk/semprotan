@@ -7,11 +7,11 @@
 
     <title>SIMFORTA Admin Panel</title>
 
-    <!-- Fonts 
+    <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>-->
-    <link href="{{ asset('/simforta/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/simforta/css/googlefonts.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <!--<link href="{{ asset('/simforta/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/simforta/css/googlefonts.css') }}" rel="stylesheet">-->
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -59,8 +59,8 @@
                                 Menu <span class="caret"></span>
                             </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/admin/home')}}">Home</a></li>
-                            <li><a href="{{ url('/admin/category')}}">Kategori</a></li>
+                            <li><a href="{{ url('/admin/home')}}"><i class="fa fa-btn fa-home"></i>Home</a></li>
+                            <li><a href="{{ url('/admin/category')}}"><i class="fa fa-btn fa-list"></i>Kategori</a></li>
                         </ul>
                     </li>
                     
@@ -79,6 +79,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/admin/users')}}"><i class="fa fa-btn fa-users"></i>Users</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>

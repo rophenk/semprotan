@@ -36,7 +36,7 @@
               <td>{{ $module->title }}</td>
               <td><a href="/admin/category/{{$module->id}}" class="btn primary">Tautan</a></td>
               <td><a href="/admin/category/{{$module->id}}/edit" class="btn btn-info">Edit</a></td>
-              <td>{!! Form::submit('Delete', array('class' => 'btn btn-danger')) !!}</td>
+              <td>{!! Form::submit('Delete', array('class' => 'btn btn-danger', 'onclick' => 'if(!confirm(\'Anda yakin akan menghapus data ini ?\')){return false;};')) !!}</td>
               {!! Form::close() !!}
               @empty
                   DATA TIDAK DITEMUKAN

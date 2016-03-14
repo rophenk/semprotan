@@ -11,13 +11,13 @@
   </div>
 </div>
 <div class="form-group">
-  {!! Form::label('icon', 'Icon', array('class' => 'col-md-4 control-label')) !!}
+  {!! Form::label('icon', 'Icon', array('class' => 'col-md-4 control-label')) !!}<a href="http://zavoloklom.github.io/material-design-iconic-font/v1/icons.html" target="_blank"><i class="fa fa-info-circle fa-lg"></i></a>
   <div class="col-md-6">
     {!! Form::text('icon', null, array('class' => 'form-control'), '') !!}
   </div>
 </div>
 <div class="form-group">
-  {!! Form::label('color', 'Color', array('class' => 'col-md-4 control-label')) !!}
+  {!! Form::label('color', 'Color', array('class' => 'col-md-4 control-label')) !!}<a href="http://byrushan.com/projects/ma/v1-2/colors.html" target="_blank"><i class="fa fa-info-circle fa-lg"></i></a>
   <div class="col-md-6">
     {!! Form::text('color', null, array('class' => 'form-control'), '') !!}
   </div>

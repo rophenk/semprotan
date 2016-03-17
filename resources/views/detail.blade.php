@@ -140,7 +140,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header bgm-cyan">
-              <h2>@kementan<small> Akun Twitter Resmi Kementerian Pertanian Republik Indonesia. Dikelola oleh Biro Umum dan Hubungan Masyarakat bersama Pusat Data dan Sistem Informasi Pertanian</small></h2>
+              <h2>@kementan<small> Akun Twitter Resmi Kementerian Pertanian Republik Indonesia. Dikelola oleh Biro Humas dan Informasi Publik bersama Pusat Data dan Sistem Informasi Pertanian</small></h2>
               <ul class="actions actions-alt">
                 <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="md md-more-vert"></i> </a>
                   <ul class="dropdown-menu dropdown-menu-right">

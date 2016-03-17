@@ -129,19 +129,19 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header bgm-indigo">
-              <h2>fb.com/Kementan<small> Akun Facebook Resmi Kementerian Pertanian Republik Indonesia. Dikelola oleh Biro Umum dan Hubungan Masyarakat bersama Pusat Data dan Sistem Informasi Pertanian</small></h2>
+              <h2>fb.com/KementanRI<small> Akun Facebook Resmi Kementerian Pertanian Republik Indonesia. Dikelola oleh Biro Umum dan Hubungan Masyarakat bersama Pusat Data dan Sistem Informasi Pertanian</small></h2>
               <ul class="actions actions-alt">
                 <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="md md-more-vert"></i> </a>
                   <ul class="dropdown-menu dropdown-menu-right">
-                    <li> <a href="https://fb.com/Kementan" role="button" title="Follow KEMENTAN on Twitter"><i class="ic-button-bird"></i>Like KEMENTAN on Facebook</a> </li>
+                    <li> <a href="https://www.facebook.com/kementanRI" role="button" title="Follow KEMENTAN on Twitter"><i class="ic-button-bird"></i>Like KEMENTAN on Facebook</a> </li>
                   </ul>
                 </li>
               </ul>
             </div>
             <div class="card-body card-padding">
-              <div class="fb-page" data-href="https://www.facebook.com/Kementan" data-width="500" data-height="604" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+              <div class="fb-page" data-href="https://www.facebook.com/kementanRI" data-width="500" data-height="604" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
                 <div class="fb-xfbml-parse-ignore">
-                  <blockquote cite="https://www.facebook.com/Kementan"><a href="https://www.facebook.com/Kementan">Kementerian Pertanian RI</a></blockquote>
+                  <blockquote cite="https://www.facebook.com/kementanRI"><a href="https://www.facebook.com/kementanRI">Kementerian Pertanian RI</a></blockquote>
                 </div>
               </div>
             </div>

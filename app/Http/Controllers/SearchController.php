@@ -57,7 +57,7 @@ class SearchController extends Controller
         }
 
         curl_close($curl);
-        return view('result', ['result' => json_decode($result)]);
+        return view('result', ['result' => json_decode($result), 'keyword' => $request->keyword]);
     }
 
     /**

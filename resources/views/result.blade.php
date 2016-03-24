@@ -37,6 +37,7 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Simforta</title>
 
 <!-- Vendor CSS -->
@@ -46,6 +47,7 @@
 <!-- CSS -->
 {!! Html::style('simforta/css/app.min.css') !!}
 {!! Html::style('simforta/css/custom.css') !!}
+<link href="{{ asset('/simforta/css/dataTables.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -63,7 +65,7 @@
       <div class="card blog-post">
         <div class="bp-header"> <img src="simforta/img/gedung.jpg" alt="">
           <center>
-            <a href="#" class="bp-title">
+            <a href="/" class="bp-title">
             <h1>SIMFORTA</h1>
             <h2>Sistem Informasi Pertanian</h2>
             </a>
@@ -86,15 +88,93 @@
           <div class="row text-left m-t-25">
             <div class="col-lg-10 col-lg-offset-1">
               <div class="row m-b-25 m-t-25">
+                <h4>Hasil pencarian dengan kata kunci : {{ $keyword }}</h4>
+                <script>
+                  (function() {
+                    var cx = '009045644045460997910:ccqgsjnfvt4';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                  })();
+                </script>
+               <!-- <div style="width:0px;overflow:hidden;height:0px;">
+                  <gcse:search></gcse:search>
+                </div>
+                <form id="searchbox_009045644045460997910:ccqgsjnfvt4" action="">
+                    <input value="009045644045460997910:ccqgsjnfvt4" name="cx" type="hidden"/>
+                    <input value="FORID:11" name="cof" type="hidden"/>
+                    <input id="q" style="" name="q" size="75" type="text" value="{{ $keyword }}"/>
+                    <button class="btn">Google Search</button>
+                </form>-->
+                <!-- Search box form -->
+                <form onsubmit="return executeQuery();" id="cse-search-box-form-id">
+                  <!-- This is the input searc box -->
+                  <input type="text" id="cse-search-input-box-id" size="100%" autocomplete="off" value="{{ $keyword }}" />
+                  <!-- This is the search button -->
+                  <input type="submit" value="Google Search"/>
+                </form>
+                <!-- End of search box form -->
+
+                <!-- REQUIRED: Attach the Google branding watermark to your search box. -->
+                <!-- WARNING: Branding attachment should be after transliteration -->
+                <!-- Set the "form" URL parameter to the id of the form containing the input
+                         search box.
+                     Set the "inputbox" URL parameter to the name or id of the query textbox.
+                         'q' will be used if it's not specified.
+                     Set the "lang" URL parameter to localize the branding for a specific
+                         language. Find the list of supported languages at
+                         http://code.google.com/apis/customsearch/docs/ref_languages.html
+                -->
+
+                <script type="text/javascript"
+                        src="//www.google.com/cse/brand?form=cse-search-box-form-id&inputbox=cse-search-input-box-id">
+                </script>
+                <!-- End of Google branding watermark -->
+
+                <!-- Element code snippet -->
+                <script type="text/javascript">
+                  function executeQuery() {
+                    var input = document.getElementById('cse-search-input-box-id');
+                    var element = google.search.cse.element.getElement('searchresults-only0');
+                    if (input.value == '') {
+                      element.clearAllResults();
+                    } else {
+                      element.execute(input.value);
+                    }
+                    return false;
+                  }
+                </script>
+                <hr />
                 <?php if(isset($result)) { ?>
+                 <table class="table table-hover table-striped display" id="datatable" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Dokumen</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Dokumen</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
                 <!-- Content Here -->
                 @forelse ($result as $result)
+                <tr>
+                  <td>
                   <h4><a href="/detail/{{ $result->uuid }}">{{ $result->document_title }}</a></h4>
                   Publisher : {{ $result->publisher }}
-                  <hr />
+                  </td>
+                </tr>
                 @empty
                   DATA TIDAK DITEMUKAN
                 @endforelse
+                  </tbody>
+                </table>
                 <?php 
                   } else {
 
@@ -102,6 +182,7 @@
 
                   }
                 ?>
+                <gcse:searchresults-only></gcse:searchresults-only>
               </div>
             </div>
             <!-- /.col-lg-10 --> 
@@ -202,7 +283,12 @@
 {!! Html::script('simforta/vendors/bootstrap-growl/bootstrap-growl.min.js') !!}
 {!! Html::script('simforta/vendors/sweet-alert/sweet-alert.min.js') !!}
 {!! Html::script('simforta/js/functions.js') !!}
-
+{!! Html::script('simforta/js/jquery.dataTables.min.js') !!}
+<script type="text/javascript" class="init">
+    $(document).ready(function() {
+      $('#datatable').DataTable();
+    } );
+  </script>
 <!-- Modal -->
 <div class="modal fade" id="lahan" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-sm">

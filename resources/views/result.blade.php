@@ -111,12 +111,14 @@
                     <button class="btn">Google Search</button>
                 </form>-->
                 <!-- Search box form -->
+                <center>
                 <form onsubmit="return executeQuery();" id="cse-search-box-form-id">
                   <!-- This is the input searc box -->
-                  <input type="text" id="cse-search-input-box-id" size="100%" autocomplete="off" value="{{ $keyword }}" />
+                  <input type="text" id="cse-search-input-box-id" size="25" autocomplete="off" value="{{ $keyword }}" />
                   <!-- This is the search button -->
                   <input type="submit" value="Google Search"/>
                 </form>
+              </center>
                 <!-- End of search box form -->
 
                 <!-- REQUIRED: Attach the Google branding watermark to your search box. -->

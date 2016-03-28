@@ -116,7 +116,7 @@
                   <!-- This is the input searc box -->
                   <input type="text" id="cse-search-input-box-id" size="25" autocomplete="off" value="{{ $keyword }}" />
                   <!-- This is the search button -->
-                  <input type="submit" value="Google Search"/>
+                  <input type="submit" value="Detail Search"/>
                 </form>
               </center>
                 <!-- End of search box form -->

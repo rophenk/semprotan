@@ -48,6 +48,21 @@
 {!! Html::style('simforta/css/app.min.css') !!}
 {!! Html::style('simforta/css/custom.css') !!}
 <link href="{{ asset('/simforta/css/dataTables.css') }}" rel="stylesheet">
+
+<!-- Javascript Libraries --> 
+{!! Html::script('simforta/js/jquery-2.1.1.min.js') !!}
+{!! Html::script('simforta/js/bootstrap.min.js') !!}
+{!! Html::script('simforta/vendors/nicescroll/jquery.nicescroll.min.js') !!}
+{!! Html::script('simforta/vendors/waves/waves.min.js') !!}
+{!! Html::script('simforta/vendors/bootstrap-growl/bootstrap-growl.min.js') !!}
+{!! Html::script('simforta/vendors/sweet-alert/sweet-alert.min.js') !!}
+{!! Html::script('simforta/js/functions.js') !!}
+{!! Html::script('simforta/js/jquery.dataTables.min.js') !!}
+<script type="text/javascript" class="init">
+    $(document).ready(function() {
+      $('#datatable').DataTable();
+    } );
+  </script>
 </head>
 
 <body>
@@ -96,7 +111,7 @@
                     gcse.type = 'text/javascript';
                     gcse.async = true;
                     gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                        '//cse.google.com/cse.js?cx=' + cx;
+                        '//cse.google.com/cse.js?num=5&cx=' + cx;
                     var s = document.getElementsByTagName('script')[0];
                     s.parentNode.insertBefore(gcse, s);
                   })();
@@ -277,20 +292,7 @@
             </div>   
         <![endif]--> 
 
-<!-- Javascript Libraries --> 
-{!! Html::script('simforta/js/jquery-2.1.1.min.js') !!}
-{!! Html::script('simforta/js/bootstrap.min.js') !!}
-{!! Html::script('simforta/vendors/nicescroll/jquery.nicescroll.min.js') !!}
-{!! Html::script('simforta/vendors/waves/waves.min.js') !!}
-{!! Html::script('simforta/vendors/bootstrap-growl/bootstrap-growl.min.js') !!}
-{!! Html::script('simforta/vendors/sweet-alert/sweet-alert.min.js') !!}
-{!! Html::script('simforta/js/functions.js') !!}
-{!! Html::script('simforta/js/jquery.dataTables.min.js') !!}
-<script type="text/javascript" class="init">
-    $(document).ready(function() {
-      $('#datatable').DataTable();
-    } );
-  </script>
+
 <!-- Modal -->
 <div class="modal fade" id="lahan" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-sm">

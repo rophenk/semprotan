@@ -132,6 +132,11 @@
                   <input type="text" id="cse-search-input-box-id" size="25" autocomplete="off" value="{{ $keyword }}" />
                   <!-- This is the search button -->
                   <input type="submit" value="Detail Search"/>
+                </form><br />
+                <form id="extended-search" action="/extended" method="post" target="_blank">
+                  <input type="hidden" id="extended_search_query" name="extended_search_query" value="{{ $keyword }}" />
+                  <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                  <input type="submit" value="Extended Search"/>
                 </form>
               </center>
                 <!-- End of search box form -->

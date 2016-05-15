@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Redirect;
 use App\Modules;
 use App\ModulesContent;
 use Illuminate\Http\Request;
@@ -128,9 +129,13 @@ class SearchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function extended(Request $request)
     {
-        //
+        $q = $request->extended_search_query;
+        /*var_dump($q);die();*/
+        $url = "https://www.google.com/search?q=".$q."+site%3A*.pertanian.go.id";
+
+        return Redirect::to($url);
     }
 
     /**

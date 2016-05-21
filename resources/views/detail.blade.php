@@ -98,7 +98,7 @@
                   <?php 
                   if(!empty($data->cover_image)) {
                     /*$url = ImageHandler::thumb($data->cover_image); */
-                    $url = ImageHandler::width($data->cover_image, 250);
+                    /*$url = ImageHandler::width($data->cover_image, 250);*/
                     /*echo '<img src="'.$url.'" width="250px">';*/
                     echo '<img src="{{ $data->cover_image }}" width="250px"/>';
                   }

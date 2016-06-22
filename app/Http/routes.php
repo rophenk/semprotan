@@ -15,6 +15,7 @@
     return view('index');
 });*/
 Route::resource('/', 'SearchController@index');
+Route::resource('/fbpage', 'SearchController@fbpage');
 
 Route::controllers([
     'auth'  => 'Auth\AuthController',

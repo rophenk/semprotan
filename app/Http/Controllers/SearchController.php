@@ -27,6 +27,11 @@ class SearchController extends Controller
         return view('index', ['modules' => $modules, 'modules_content' => $modules_content]);
     }
 
+    public function fbpage()
+    {
+        return view('fbpage');
+    }
+
     public function result(Request $request)
     {
     	//$url = 'http://simapta.local/api/v1/search/result';

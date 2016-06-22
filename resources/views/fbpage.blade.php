@@ -74,7 +74,7 @@
               </ul>
             </div>
             <div class="card-body card-padding">
-              <div class="fb-page" data-href="https://www.facebook.com/kementanRI" data-width="500" data-height="604" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+              <div class="fb-page" data-href="https://www.facebook.com/kementanRI"  data-tabs="timeline,events" data-width="500" data-height="604" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
                 <div class="fb-xfbml-parse-ignore">
                   <blockquote cite="https://www.facebook.com/kementanRI"><a href="https://www.facebook.com/kementanRI">Kementerian Pertanian RI</a></blockquote>
                 </div>

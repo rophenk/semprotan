@@ -16,11 +16,12 @@
 });*/
 Route::resource('/', 'SearchController@index');
 Route::resource('/fbpage', 'SearchController@fbpage');
-
+Route::get('/api/v1/category/{module_id}/links', 'SearchController@linksListJson');
 Route::controllers([
     'auth'  => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
   ]);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,6 @@ Route::controllers([
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
 
 
 

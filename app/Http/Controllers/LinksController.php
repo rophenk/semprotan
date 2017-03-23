@@ -28,7 +28,7 @@ class LinksController extends Controller
      */
     public function index($id)
     {
-        //
+
     }
 
     /**

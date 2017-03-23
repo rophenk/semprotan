@@ -27,6 +27,13 @@ class SearchController extends Controller
         return view('index', ['modules' => $modules, 'modules_content' => $modules_content]);
     }
 
+    public function linksListJson($module_id)
+    {
+        $links = ModulesContent::where('modules_id', $module_id)->simplePaginate(10);
+        return $links;
+
+    }
+
     public function fbpage()
     {
         return view('fbpage');

@@ -29,7 +29,7 @@ class SearchController extends Controller
 
     public function linksListJson($module_id)
     {
-        $links = ModulesContent::where('modules_id', $module_id)->simplePaginate(10);
+        $links = ModulesContent::where('modules_id', $module_id)->simplePaginate(30);
         return $links;
 
     }
